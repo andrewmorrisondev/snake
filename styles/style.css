@@ -1,0 +1,17 @@
+.board {
+  width: 410px;
+  height: 400px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+.snake {
+  background-color: black;
+}
