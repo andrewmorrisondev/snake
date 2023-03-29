@@ -30,18 +30,21 @@ const boxes = document.querySelectorAll(`.box`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-document.addEventListener("keypress", function(event) {
+document.addEventListener(`keypress`, (event) => {
   if (event.key === `w`) {
-    snake.direction = 'up'
+    snake.direction = `up`
   }
   if (event.key === `a`) {
-    snake.direction = 'left'
+    snake.direction = `left`
   }
   if (event.key === `s`) {
-    snake.direction = 'down'
+    snake.direction = `down`
   }
   if (event.key === `d`) {
-    snake.direction = 'right'
+    snake.direction = `right`
+  }
+  if (event.key === ` `) {
+    startSnake()
   }
 })
 
@@ -92,7 +95,6 @@ function init() {
   snake.reset
   renderBoard()
   renderSnake()
-  // startSnake()
 }
           
 init()
