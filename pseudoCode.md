@@ -1,7 +1,7 @@
 Step 1. Define the required variables used to track the state of the game
 + snake
   + position
-    + 2d arr of [x, y] coordinates
+    + arr of positions from grid
       + pos[0] is head
       + pos[-1] is tail
   + direction
@@ -23,7 +23,7 @@ Step 2. Store cached element references
 
 
 Step 3. Upon loading, the game state should be initialized, and a function should be called to render this game state
-+ define init() that 
++ define init() that resets snake, renders board, renders snake
 
 
 Step 4. The state of the game should be rendered to the user
@@ -50,4 +50,4 @@ Step 7. Define Game Logic
 Step 8. Create Reset functionality
 + gameover prompts message with a reset button
   + button will have a listener that calls reset()
-  + reset() will re init all states of the game
+  + reset() will reset all states of the game
