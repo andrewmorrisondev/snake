@@ -1,4 +1,4 @@
-# [snake](ssssnake.netlify.app)
+# [snake](https://ssssnake.netlify.app)
 
 <!-- #### a description of snake, why I chose it, and a screenshot -->
 
