@@ -1,4 +1,4 @@
-Step 1. Define the required variables used to track the state of the game
+__Step 1.__ Define the required variables used to track the state of the game
 + snake
   + position
     + arr of positions from grid
@@ -16,22 +16,22 @@ Step 1. Define the required variables used to track the state of the game
   + length/width
   + size
 
-Step 2. Store cached element references
+__Step 2.__ Store cached element references
 + board
 + boxes
 + message
 
 
-Step 3. Upon loading, the game state should be initialized, and a function should be called to render this game state
+__Step 3.__ Upon loading, the game state should be initialized, and a function should be called to render this game state
 + define init() that resets snake, renders board, renders snake
 
 
-Step 4. The state of the game should be rendered to the user
+__Step 4.__ The state of the game should be rendered to the user
 + define render() that generates the board
 
-Step 5. Define the required constants
+__Step 5.__ Define the required constants
 
-Step 6. Add listeners
+__Step 6.__ Add listeners
 + Start Button
 
 + Reset Button
@@ -40,14 +40,14 @@ Step 6. Add listeners
   + arrow keys and WASD for desktop
   + swipe for mobile
 
-Step 7. Define Game Logic
+__Step 7.__ Define Game Logic
 + collision detection
   + self
   + wall
   + food
 + growth with food
 
-Step 8. Create Reset functionality
+__Step 8.__ Create Reset functionality
 + gameover prompts message with a reset button
   + button will have a listener that calls reset()
   + reset() will reset all states of the game
