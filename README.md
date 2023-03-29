@@ -1,8 +1,11 @@
 # [snake](https://ssssnake.netlify.app)
 
-<!-- #### a description of snake, why I chose it, and a screenshot -->
+![screenshot of snake](https://i.imgur.com/RuWH5C8.png)
 
+<!-- #### a description of snake, why I chose it, and a screenshot -->
+Snake is a classic arcade game, originally programmed in 1997 by Taneli Armanto of Nokia. Introduced on the Nokia 6110. I chose to build snake becuase I like playing snake.
 <!-- # How to Play -->
+In this very early stage of development, functionallity is limited. Press space to begin to move the snake around the board, and use WASD to control the direction. __PLEASE NOTE__ The snake will slither off the edge of the play area. This will be patched in later versions. 
 
 # Attributions
 
@@ -18,10 +21,18 @@
 
 # Upcoming Features - Icebox
 
-[ ] - a gameboard made up of a grid in the center of the page
+[X] - a gameboard made up of a grid
 
 [X] - a 'snake' that can move around the grid with the arrow keys
 
 [ ] - randomly spawning food that can be consumed
 
-[ ] - consuming food makes the box longer
+[ ] - consuming food makes the snake longer
+
+[ ] - speed increase as snake grows
+
+[ ] - collison detection
+
+[ ] - scoreboard
+
+[ ] - leaderboard
