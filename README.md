@@ -20,7 +20,7 @@
 
 [ ] - a gameboard made up of a grid in the center of the page
 
-[X] - a box that can move around the grid with the arrow keys
+[X] - a 'snake' that can move around the grid with the arrow keys
 
 [ ] - randomly spawning food that can be consumed
 
