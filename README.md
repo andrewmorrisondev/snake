@@ -35,6 +35,6 @@ In this very early stage of development, functionallity is limited. Press space 
 
 [ ] - accessibilty for mobile users
 
-[ ] - scoreboard
+[X] - scoreboard
 
 [ ] - leaderboard

@@ -141,6 +141,13 @@ function wallCollide() {
   return false
 }
 
+function tailCollide() {
+  if (board.nodeList[snake.position[0]].classList.contains(`snake`)) {
+    return true
+  }
+  return false
+}
+
 
 function gg() {
   gameover = true
@@ -163,6 +170,7 @@ function moveHead() {
       break;
   }
 
+  // tailCollide()
   if (wallCollide()) {
     stopSnake()
     gg()
