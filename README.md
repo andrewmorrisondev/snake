@@ -1,4 +1,4 @@
-# [snake](https://ssssnake.netlify.app)
+# [play snake](https://ssssnake.netlify.app)
 
 ![start screen](https://i.imgur.com/4DYTRVW.png)
 ![game over](https://i.imgur.com/vXAY1bN.png)

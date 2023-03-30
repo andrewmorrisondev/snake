@@ -39,17 +39,21 @@ const message = document.querySelector(`.message`)
 /*----------------------------- Event Listeners -----------------------------*/
 
 document.addEventListener(`keypress`, (event) => {
-  if (event.key === `w`) {
-    snake.direction = `up`
+  if (snake.direction === `left` || snake.direction === `right`) {
+    if (event.key === `w`) {
+      snake.direction = `up`
+    }
+    if (event.key === `s`) {
+      snake.direction = `down`
+    }
   }
-  if (event.key === `a`) {
-    snake.direction = `left`
-  }
-  if (event.key === `s`) {
-    snake.direction = `down`
-  }
-  if (event.key === `d`) {
-    snake.direction = `right`
+  if (snake.direction === `up` || snake.direction === `down`) {
+    if (event.key === `a`) {
+      snake.direction = `left`
+    }
+    if (event.key === `d`) {
+      snake.direction = `right`
+    }
   }
   if (event.key === ` `) {
     startSnake()
