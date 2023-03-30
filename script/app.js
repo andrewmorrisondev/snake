@@ -12,13 +12,16 @@ let snake = {
   position: [86, 66, 46, 26],
   direction: `down`,
   length: 3,
-  speed: 0,
+  speed: 100,
   score: 0,
+  eat: () => {
+    ++snake.length
+  },
   reset: () => {
     snake.position = [86, 66, 46, 26],
     snake.direction = `down`,
     snake.length = 3,
-    snake.speed = 0,
+    snake.speed = 100,
     snake.score = 0
   }
 }
@@ -59,19 +62,38 @@ function renderBoard() {
   }
 }
 
-function renderSnake() {
-  moveSnake()
+function drawForward() {
   snake.position.forEach((pos) => {
     board.childNodes[pos].classList.add(`snake`)
   })
-  
+}
+
+function eraseBackward() {
+  const trail = snake.position.pop()
+  board.childNodes[trail].classList.remove(`snake`)
+}
+
+function renderSnake() {
+  moveHead()
+  drawForward()
 }
 
 function startSnake() {
-  setInterval(renderSnake, 100)
+  setInterval(renderSnake, snake.speed)
 }
 
-function moveSnake() {
+function foodCollide() {
+  if (board.childNodes[snake.position[0]].classList.contains(`food`)) {
+    // remove food
+    board.childNodes[snake.position[0]].classList.remove(`food`)
+    // increase lenghth
+    snake.eat()
+    // spawn new food
+    spawnFood()
+  }
+}
+
+function moveHead() {
   switch(snake.direction) {
     case 'up':
       snake.position.unshift(snake.position[0] - grid.lengthAndWidth)
@@ -86,13 +108,12 @@ function moveSnake() {
       snake.position.unshift(snake.position[0] + 1)
       break;
   }
-  const trail = snake.position.pop()
-  board.childNodes[trail].classList.remove(`snake`)
+  foodCollide()
+  eraseBackward()
 }
 
 function spawnFood() {
   const foodPos = Math.floor(Math.random() * 399)
-
   board.childNodes[foodPos].classList.add(`food`)
 }
 
