@@ -276,4 +276,14 @@ function init() {
 }
           
 init()
+
+// following code taken from https://www.scaler.com/topics/css-disable-scroll/
+
+function disableTouchScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+}
+
+// end citation
           
