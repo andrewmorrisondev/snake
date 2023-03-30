@@ -15,7 +15,9 @@ let snake = {
   speed: 100,
   score: 0,
   eat: () => {
-    ++snake.length
+    ++snake.length,
+    ++snake.score,
+    snake.speed += 100
   },
   reset: () => {
     snake.position = [86, 66, 46, 26],
@@ -25,6 +27,8 @@ let snake = {
     snake.score = 0
   }
 }
+
+let gameOver
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -115,11 +119,16 @@ function moveHead() {
 }
 
 function spawnFood() {
-  const foodPos = Math.floor(Math.random() * 399)
-  board.childNodes[foodPos].classList.add(`food`)
+  const foodPos = Math.floor(Math.random() * grid.size)
+  if (board.childNodes[foodPos].classList.contains(`snake`)) {
+    spawnFood()
+  } else {
+    board.childNodes[foodPos].classList.add(`food`)
+  }
 }
 
 function init() {
+  gameOver = false
   snake.reset
   renderBoard()
   renderSnake()
