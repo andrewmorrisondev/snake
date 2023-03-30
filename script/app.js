@@ -34,6 +34,7 @@ let tick = null
 
 const board = document.querySelector(`.board`)
 const boxes = document.querySelectorAll(`.box`)
+const message = document.querySelector(`.message`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -111,7 +112,7 @@ function wallCollide() {
 }
 
 function gg() {
-  console.log(`gameover`);
+  message.innerText = `game over ${snake.score}`
 }
 
 function moveHead() {
