@@ -6,8 +6,6 @@ const grid = {
 }
 
 
-/*---------------------------- Variables (state) ----------------------------*/
-
 let snake = {
   position: [86, 66, 46, 26],
   direction: `down`,
@@ -17,7 +15,7 @@ let snake = {
   eat: () => {
     ++snake.length,
     ++snake.score,
-    snake.speed += 100
+    snake.speed -= 1
   },
   reset: () => {
     snake.position = [86, 66, 46, 26],
@@ -27,13 +25,14 @@ let snake = {
     snake.score = 0
   }
 }
+/*---------------------------- Variables (state) ----------------------------*/
+
 
 let gameover, tick = null
 
 /*------------------------ Cached Element References ------------------------*/
 
 const board = document.querySelector(`.board`)
-const boxes = document.querySelectorAll(`.box`)
 const message = document.querySelector(`.message`)
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -55,13 +54,43 @@ document.addEventListener(`keypress`, (event) => {
       snake.direction = `right`
     }
   }
-  if (event.key === ` `) {
+})
+
+document.addEventListener(`click`, (event) => {
+  if (event.target.textContent === `play`) {
+    displayHide()
+    startSnake()
+  }
+  if (event.target.textContent === `play again?`) {
+    newGame()
+    displayHide()
     startSnake()
   }
 })
 
 /*-------------------------------- Functions --------------------------------*/
 
+function displayStart() {
+  const play = document.createElement(`div`)
+  play.classList.add(`play`)
+  play.innerText = `play`
+  message.appendChild(play)
+}
+
+function displayLose() {
+  message.removeChild(message.firstChild)
+
+  const playAgain = document.createElement(`div`)
+  playAgain.classList.add(`play-again`)
+  playAgain.innerText = `play again?`
+  message.appendChild(playAgain)
+
+  message.classList.remove(`hidden`)
+}
+
+function displayHide() {
+  message.classList.add(`hidden`)
+}
 
 function renderBoard() {
   for (i = 0; i < grid.size; i++) {
@@ -69,6 +98,21 @@ function renderBoard() {
     box.setAttribute(`class`, `box`)
     board.appendChild(box)
   }
+}
+
+function resetBoard() {
+  const boxes = document.querySelectorAll(`.box`)
+
+  for (const box of boxes) {
+    box.className = `box`
+  }
+}
+
+function newGame() {
+  gameover = false
+  resetBoard()
+  spawnFood()
+  snake.reset()
 }
 
 function drawForward() {
@@ -87,19 +131,17 @@ function eraseBackward() {
   board.childNodes[snake.position[1]].classList.remove(`snake-head`)
 }
 
-function renderSnake() {
-  moveHead()
-  if (gameover === false) {
-    drawForward()
-  }
-}
-
 function startSnake() {
   tick = setInterval(renderSnake, snake.speed)
 }
 
 function stopSnake() {
   clearInterval(tick)
+}
+
+function speedUp() {
+  clearInterval(tick)
+  tick = setInterval(renderSnake, snake.speed)
 }
 
 function foodCollide() {
@@ -110,7 +152,16 @@ function foodCollide() {
     snake.eat()
     // spawn new food
     spawnFood()
+    speedUp()
+    console.log(snake.speed);
   }
+}
+
+function tailCollide() {
+  if (board.childNodes[snake.position[0]].classList.contains(`snake`)) {
+    return true
+  }
+  return false
 }
 
 function topWallCollide() {
@@ -148,17 +199,9 @@ function wallCollide() {
   return false
 }
 
-function tailCollide() {
-  if (board.childNodes[snake.position[0]].classList.contains(`snake`)) {
-    return true
-  }
-  return false
-}
-
-
 function gg() {
   gameover = true
-  message.innerText = `game over. foods eaten: ${snake.score}`
+  displayLose()
 }
 
 function moveHead() {
@@ -186,6 +229,13 @@ function moveHead() {
   }
 }
 
+function renderSnake() {
+  moveHead()
+  if (gameover === false) {
+    drawForward()
+  }
+}
+
 function spawnFood() {
   const foodPos = Math.floor(Math.random() * grid.size)
   if (board.childNodes[foodPos].classList.contains(`snake`)) {
@@ -197,10 +247,11 @@ function spawnFood() {
 
 function init() {
   gameover = false
-  snake.reset
+  snake.reset()
   renderBoard()
   renderSnake()
   spawnFood()
+  displayStart()
 }
           
 init()
