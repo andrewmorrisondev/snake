@@ -28,7 +28,7 @@ let snake = {
   }
 }
 
-let tick = null
+let gameover, tick = null
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -82,7 +82,9 @@ function eraseBackward() {
 
 function renderSnake() {
   moveHead()
-  drawForward()
+  if (gameover === false) {
+    drawForward()
+  }
 }
 
 function startSnake() {
@@ -104,14 +106,44 @@ function foodCollide() {
   }
 }
 
-function wallCollide() {
-  if (snake.position[0] < 0 || snake.position[0] > 399) {
+function topWallCollide() {
+  if (snake.position[0] < 0) {
     return true
   }
   return false
 }
 
+function bottomWallCollide() {
+  if (snake.position[0] > 399) {
+    return true
+  }
+  return false
+}
+
+function rightWallCollide() {
+  if (snake.position[0] % 20 === 0 && snake.direction === `right`) {
+    return true
+  }
+  return false
+}
+
+function leftWallCollide() {
+  if (snake.position[0] % 20 === 19 && snake.direction === `left`) {
+    return true
+  }
+  return false
+}
+
+function wallCollide() {
+  if (topWallCollide() || bottomWallCollide() || leftWallCollide() || rightWallCollide()) {
+    return true
+  }
+  return false
+}
+
+
 function gg() {
+  gameover = true
   message.innerText = `game over ${snake.score}`
 }
 
@@ -130,6 +162,7 @@ function moveHead() {
       snake.position.unshift(snake.position[0] + 1)
       break;
   }
+
   if (wallCollide()) {
     stopSnake()
     gg()
@@ -149,6 +182,7 @@ function spawnFood() {
 }
 
 function init() {
+  gameover = false
   snake.reset
   renderBoard()
   renderSnake()
