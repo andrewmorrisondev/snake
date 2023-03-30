@@ -68,6 +68,27 @@ document.addEventListener(`click`, (event) => {
   }
 })
 
+// the following code is heavily inspired by https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
+document.addEventListener('swiped', function(event) {
+  if (snake.direction === `left` || snake.direction === `right`) {
+    if (event.detail.dir === `up`) {
+      snake.direction = `up`
+    }
+    if (event.detail.dir === `down`) {
+      snake.direction = `down`
+    }
+  }
+  if (snake.direction === `up` || snake.direction === `down`) {
+    if (event.detail.dir === `left`) {
+      snake.direction = `left`
+    }
+    if (event.detail.dir === `right`) {
+      snake.direction = `right`
+    }
+  }
+});
+// end citation
+
 /*-------------------------------- Functions --------------------------------*/
 
 function displayStart() {
