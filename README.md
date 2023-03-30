@@ -1,11 +1,12 @@
 # [snake](https://ssssnake.netlify.app)
 
-![screenshot of snake](https://i.imgur.com/RuWH5C8.png)
+![start screen](https://i.imgur.com/4DYTRVW.png)
+![game over](https://i.imgur.com/vXAY1bN.png)
 
 <!-- #### a description of snake, why I chose it, and a screenshot -->
-Snake is a classic arcade game, originally programmed in 1997 by Taneli Armanto of Nokia. Introduced on the Nokia 6110. I chose to build snake becuase I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
+Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake becuase I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
 <!-- # How to Play -->
-In this very early stage of development, functionallity is limited. Press space to begin to move the snake around the board, and use WASD to control the direction. __PLEASE NOTE__ The snake will slither off the edge of the play area. This will be patched in later versions. 
+This is an MVP. Bugs and ugliness to be patched in later updates.
 
 # Attributions
 
@@ -31,7 +32,7 @@ In this very early stage of development, functionallity is limited. Press space 
 
 [ ] - speed increase as snake grows
 
-[ ] - collison detection
+[X] - collison detection
 
 [ ] - accessibilty for mobile users
 
