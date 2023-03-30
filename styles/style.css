@@ -17,6 +17,11 @@
   border: 1px solid white;
 }
 
+.snake-head {
+  background-color: black;
+  border: 1px solid red;
+}
+
 .food {
   background-color: red;
 }

@@ -71,6 +71,8 @@ function drawForward() {
   snake.position.forEach((pos) => {
     board.childNodes[pos].classList.add(`snake`)
   })
+  board.childNodes[snake.position[0]].classList.remove(`snake`)
+  board.childNodes[snake.position[0]].classList.add(`snake-head`)
 }
 
 function eraseBackward() {
@@ -78,6 +80,7 @@ function eraseBackward() {
     const trail = snake.position.pop()
     board.childNodes[trail].classList.remove(`snake`)
   }
+  board.childNodes[snake.position[1]].classList.remove(`snake-head`)
 }
 
 function renderSnake() {
@@ -142,7 +145,7 @@ function wallCollide() {
 }
 
 function tailCollide() {
-  if (board.nodeList[snake.position[0]].classList.contains(`snake`)) {
+  if (board.childNodes[snake.position[0]].classList.contains(`snake`)) {
     return true
   }
   return false
@@ -151,7 +154,7 @@ function tailCollide() {
 
 function gg() {
   gameover = true
-  message.innerText = `game over ${snake.score}`
+  message.innerText = `game over. foods eaten: ${snake.score}`
 }
 
 function moveHead() {
@@ -170,8 +173,7 @@ function moveHead() {
       break;
   }
 
-  // tailCollide()
-  if (wallCollide()) {
+  if (wallCollide() || tailCollide()) {
     stopSnake()
     gg()
   } else {
