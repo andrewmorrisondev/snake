@@ -69,8 +69,10 @@ function drawForward() {
 }
 
 function eraseBackward() {
-  const trail = snake.position.pop()
-  board.childNodes[trail].classList.remove(`snake`)
+  if (snake.position.length > snake.length) {
+    const trail = snake.position.pop()
+    board.childNodes[trail].classList.remove(`snake`)
+  }
 }
 
 function renderSnake() {

@@ -27,7 +27,7 @@ In this very early stage of development, functionallity is limited. Press space 
 
 [X] - randomly spawning food that can be consumed
 
-[ ] - consuming food makes the snake longer
+[X] - consuming food makes the snake longer
 
 [ ] - speed increase as snake grows
 
