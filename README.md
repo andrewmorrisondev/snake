@@ -30,12 +30,12 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 
 [X] - consuming food makes the snake longer
 
-[ ] - speed increase as snake grows
+[X] - speed increase as snake grows
 
 [X] - collison detection
 
 [ ] - accessibilty for mobile users
 
-[X] - scoreboard
+[] - scoreboard
 
 [ ] - leaderboard
