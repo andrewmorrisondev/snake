@@ -27,7 +27,24 @@
 }
 
 .message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   height: 200px;
   width: 400px;
   border: 3px solid red
+}
+
+.play, .play-again {
+  background-color: grey;
+  padding: 12px 25px;
+}
+
+.play:hover, .play-again:hover {
+  background-color: lightgray;
+}
+
+.hidden {
+  display: none;
 }
