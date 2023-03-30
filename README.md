@@ -25,7 +25,7 @@ In this very early stage of development, functionallity is limited. Press space 
 
 [X] - a 'snake' that can move around the grid with WASD
 
-[ ] - randomly spawning food that can be consumed
+[X] - randomly spawning food that can be consumed
 
 [ ] - consuming food makes the snake longer
 
