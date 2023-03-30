@@ -28,7 +28,7 @@ let snake = {
   }
 }
 
-let gameOver
+let tick = null
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -85,7 +85,11 @@ function renderSnake() {
 }
 
 function startSnake() {
-  setInterval(renderSnake, snake.speed)
+  tick = setInterval(renderSnake, snake.speed)
+}
+
+function stopSnake() {
+  clearInterval(tick)
 }
 
 function foodCollide() {
@@ -97,6 +101,17 @@ function foodCollide() {
     // spawn new food
     spawnFood()
   }
+}
+
+function wallCollide() {
+  if (snake.position[0] < 0 || snake.position[0] > 399) {
+    return true
+  }
+  return false
+}
+
+function gg() {
+  console.log(`gameover`);
 }
 
 function moveHead() {
@@ -114,8 +129,13 @@ function moveHead() {
       snake.position.unshift(snake.position[0] + 1)
       break;
   }
-  foodCollide()
-  eraseBackward()
+  if (wallCollide()) {
+    stopSnake()
+    gg()
+  } else {
+    foodCollide()
+    eraseBackward()
+  }
 }
 
 function spawnFood() {
@@ -128,7 +148,6 @@ function spawnFood() {
 }
 
 function init() {
-  gameOver = false
   snake.reset
   renderBoard()
   renderSnake()
