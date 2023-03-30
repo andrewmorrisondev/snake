@@ -72,7 +72,6 @@ function startSnake() {
 }
 
 function moveSnake() {
-  console.log(snake.position)
   switch(snake.direction) {
     case 'up':
       snake.position.unshift(snake.position[0] - grid.lengthAndWidth)
@@ -91,10 +90,17 @@ function moveSnake() {
   board.childNodes[trail].classList.remove(`snake`)
 }
 
+function spawnFood() {
+  const foodPos = Math.floor(Math.random() * 399)
+
+  board.childNodes[foodPos].classList.add(`food`)
+}
+
 function init() {
   snake.reset
   renderBoard()
   renderSnake()
+  spawnFood()
 }
           
 init()
