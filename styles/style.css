@@ -1,3 +1,10 @@
+html, body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-x: hidden;
+}
+
 .board {
   width: 410px;
   height: 400px;
