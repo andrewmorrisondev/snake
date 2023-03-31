@@ -15,7 +15,7 @@ const snake = {
   eat: () => {
     ++snake.length,
     ++snake.score,
-    snake.speed -= 0.2,
+    snake.speed -= 0.2
   },
   reset: () => {
     snake.position = [86, 66, 46, 26],
