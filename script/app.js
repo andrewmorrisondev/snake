@@ -5,7 +5,6 @@ const grid = {
   size: 20 * 20
 }
 
-
 const snake = {
   position: [86, 66, 46, 26],
   direction: `down`,
@@ -34,8 +33,10 @@ let gameover,
 /*------------------------ Cached Element References ------------------------*/
 
 const board = document.querySelector(`.board`)
-const message = document.querySelector(`.message`)
+const message = document.querySelector(`.start-message`)
+const ggMessage = document.querySelector(`.gg-message`)
 const mobileControls = document.querySelector(`.mobile-controls`)
+const score = document.querySelector(`.score`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -62,8 +63,6 @@ document.addEventListener(`keypress`, (event) => {
       }
     }
   }
-  console.clear()
-  console.log(event.key)
 })
 
 document.addEventListener(`click`, (event) => {
@@ -103,25 +102,17 @@ document.addEventListener(`click`, (event) => {
 /*-------------------------------- Functions --------------------------------*/
 
 function displayStart() {
-  const play = document.createElement(`div`)
-  play.classList.add(`play`)
-  play.innerText = `play`
-  message.appendChild(play)
+  message.classList.remove(`hidden`)
 }
 
 function displayLose() {
-  message.removeChild(message.firstChild)
-
-  const playAgain = document.createElement(`div`)
-  playAgain.classList.add(`play-again`)
-  playAgain.innerText = `play again?`
-  message.appendChild(playAgain)
-
-  message.classList.remove(`hidden`)
+  score.innerText = `score: ${snake.score}`
+  ggMessage.classList.remove(`hidden`)
 }
 
 function displayHide() {
   message.classList.add(`hidden`)
+  ggMessage.classList.add(`hidden`)
 }
 
 function renderBoard() {
