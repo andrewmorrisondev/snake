@@ -62,7 +62,7 @@ body {
   visibility:hidden;
   display: none;
 
-  margin-top: 60px;
+  margin-top: 600px;
   position: absolute;
 }
 
@@ -74,7 +74,6 @@ body {
   width: 60px;
   position: absolute;
   text-align: center;
-  margin-left: 400px;
 }
 
 .mobile-controls #u {
@@ -90,12 +89,12 @@ body {
 }
 
 .mobile-controls #l {
-  margin-left: 300px;
+  margin-left: -100px;
   position: absolute;
 }
 
 .mobile-controls #r {
-  margin-left: 500px;
+  margin-left: 100px;
   position: absolute;
 }
 
