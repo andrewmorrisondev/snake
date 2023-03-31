@@ -36,6 +36,6 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 
 [X] - accessibilty for mobile users
 
-[ ] - scoreboard
+[X] - scoreboard
 
 [ ] - leaderboard
