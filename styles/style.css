@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 .board {
   width: 410px;
   height: 400px;
@@ -30,8 +36,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -300px;
-  margin-left: 80px;
+  margin-top: 180px;
+  position: absolute;
 
   height: 200px;
   width: 240px;
@@ -56,7 +62,7 @@
   visibility:hidden;
   display: none;
 
-  margin-top: 200px;
+  margin-top: 60px;
   position: absolute;
 }
 
@@ -74,20 +80,25 @@
 .mobile-controls #u {
   margin-top: -50px;
   margin-bottom: 50px;
+  position: absolute;
 }
 
 .mobile-controls #d {
   margin-top: 50px;
   margin-bottom: -50px;
+  position: absolute;
 }
 
 .mobile-controls #l {
   margin-left: 300px;
+  position: absolute;
 }
 
 .mobile-controls #r {
   margin-left: 500px;
+  position: absolute;
 }
+
 
 @media (max-width: 414px) and (min-width: 367px) {
   @viewport {

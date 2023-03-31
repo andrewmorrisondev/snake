@@ -34,6 +34,7 @@ let gameover, tick = null
 
 const board = document.querySelector(`.board`)
 const message = document.querySelector(`.message`)
+const mobileControls = document.querySelector(`.mobile-controls`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -68,8 +69,8 @@ document.addEventListener(`click`, (event) => {
   }
 })
 
+// buttons for mobile
 document.addEventListener(`click`, (event) => {
-  console.log(event.target.id);
   if (snake.direction === `left` || snake.direction === `right`) {
     if (event.target.id === `u`) {
       snake.direction = `up`
