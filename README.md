@@ -11,8 +11,6 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 # Attributions
 
 * [Josh's Custom CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
-* [John's swiped-events](https://github.com/john-doherty/swiped-events)
-* [disable scroll](https://www.scaler.com/topics/css-disable-scroll/)
 
 # Technologies
 
@@ -36,8 +34,8 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 
 [X] - collison detection
 
-[ ] - accessibilty for mobile users
+[X] - accessibilty for mobile users
 
-[] - scoreboard
+[ ] - scoreboard
 
 [ ] - leaderboard

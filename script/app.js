@@ -6,7 +6,7 @@ const grid = {
 }
 
 
-let snake = {
+const snake = {
   position: [86, 66, 46, 26],
   direction: `down`,
   length: 3,
@@ -68,26 +68,27 @@ document.addEventListener(`click`, (event) => {
   }
 })
 
-// the following code is heavily inspired by https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android
-document.addEventListener('swiped', function(event) {
+document.addEventListener(`click`, (event) => {
+  console.log(event.target.id);
   if (snake.direction === `left` || snake.direction === `right`) {
-    if (event.detail.dir === `up`) {
+    if (event.target.id === `u`) {
       snake.direction = `up`
     }
-    if (event.detail.dir === `down`) {
+    if (event.target.id === `d`) {
       snake.direction = `down`
     }
   }
   if (snake.direction === `up` || snake.direction === `down`) {
-    if (event.detail.dir === `left`) {
+    if (event.target.id === `l`) {
       snake.direction = `left`
     }
-    if (event.detail.dir === `right`) {
+    if (event.target.id === `r`) {
       snake.direction = `right`
     }
   }
-});
-// end citation
+})
+
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -276,14 +277,3 @@ function init() {
 }
           
 init()
-
-// following code taken from https://www.scaler.com/topics/css-disable-scroll/
-
-function disableTouchScroll(e){
-  e.preventDefault();
-  e.stopPropagation();
-  return false;
-}
-
-// end citation
-          
