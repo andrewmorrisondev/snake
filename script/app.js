@@ -27,8 +27,9 @@ const snake = {
 }
 /*---------------------------- Variables (state) ----------------------------*/
 
-
-let gameover, tick = null
+let gameover, 
+    keyDown = false, 
+    tick = null
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -39,22 +40,30 @@ const mobileControls = document.querySelector(`.mobile-controls`)
 /*----------------------------- Event Listeners -----------------------------*/
 
 document.addEventListener(`keypress`, (event) => {
-  if (snake.direction === `left` || snake.direction === `right`) {
-    if (event.key === `w`) {
-      snake.direction = `up`
+  if (!keyDown) {
+    if (snake.direction === `left` || snake.direction === `right`) {
+      if (event.key === `w`) {
+        snake.direction = `up`
+        keyDown = true
+      }
+      if (event.key === `s`) {
+        snake.direction = `down`
+        keyDown = true
+      }
     }
-    if (event.key === `s`) {
-      snake.direction = `down`
+    if (snake.direction === `up` || snake.direction === `down`) {
+      if (event.key === `a`) {
+        snake.direction = `left`
+        keyDown = true
+      }
+      if (event.key === `d`) {
+        snake.direction = `right`
+        keyDown = true
+      }
     }
   }
-  if (snake.direction === `up` || snake.direction === `down`) {
-    if (event.key === `a`) {
-      snake.direction = `left`
-    }
-    if (event.key === `d`) {
-      snake.direction = `right`
-    }
-  }
+  console.clear()
+  console.log(event.key)
 })
 
 document.addEventListener(`click`, (event) => {
@@ -242,7 +251,7 @@ function moveHead() {
       snake.position.unshift(snake.position[0] + 1)
       break;
   }
-
+  keyDown = false
   if (wallCollide() || tailCollide()) {
     stopSnake()
     gg()
