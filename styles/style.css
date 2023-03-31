@@ -5,11 +5,12 @@ body {
 
 }
 .board {
-  width: 410px;
+  width: 400px;
   height: 400px;
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .box {
@@ -62,7 +63,7 @@ body {
   visibility:hidden;
   display: none;
 
-  margin-top: 600px;
+  margin-top: 560px;
   position: absolute;
 }
 
