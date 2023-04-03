@@ -76,7 +76,6 @@ body {
   justify-content: center;
   margin-top: 30px;
   z-index: 1;
-  /* border: 1px solid red; */
 }
 
 .box {
@@ -93,8 +92,9 @@ body {
 }
 
 .food {
-  background-color: var(--snake);
+  /* background-color: var(--background); */
   border-radius: 100%;
+  border: 4 px solid var(--snake);
 }
 
 .start-message, .gg-message {
