@@ -10,6 +10,10 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 ### Spacebar - begin a new game.
 ### WASD - change the snakes direction.
 
+# Gameplay
+
+[gameplay](https://i.imgur.com/BhgiiFc.gifv)
+
 
 # High Score
 ![high score](https://i.imgur.com/XH7lKV1.png)
@@ -47,7 +51,7 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 
 [ ] - cheat codes
 
-# Highlights from app.js
+<!-- # Highlights from app.js -->
 
 # Wireframe
 
