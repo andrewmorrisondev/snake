@@ -1,56 +1,85 @@
+:root {
+  --snake: #5c5102;
+  --background: #c0cc00;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  font-family: 'VT323', monospace;
 }
+
+.background {
+  width: 600px;
+  height: 960px;
+  border: 1px solid var(--snake);
+
+  position: absolute;
+}
+
+.background img {
+  width: 600px;
+  height: 960px;
+  z-index: 0;
+}
+
+.border {
+  position: absolute;
+  width: 318px;
+  height: 318px;
+  margin-top: 25px;
+  border: 3px dotted var(--snake);
+}
+
 .board {
-  width: 400px;
-  height: 400px;
+  width: 308px;
+  height: 308px;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px 20;
+  margin-top: -18px;
+  z-index: 1;
+  /* border: 1px solid red; */
 }
 
 .box {
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  width: 15.4px;
+  height: 15.4px;
 }
 
 .snake {
-  background-color: black;
-  border: 1px solid white;
+  background-color: var(--snake);
 }
 
 .snake-head {
-  background-color: black;
-  border: 1px solid red;
+  background-color: var(--snake);
 }
 
 .food {
-  background-color: red;
+  background-color: var(--snake);
+  border-radius: 100%;
 }
 
 .start-message, .gg-message {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 180px;
+  margin-top: 27px;
   position: absolute;
 
-  height: 200px;
-  width: 240px;
-  border: 3px solid red;
-  background-color: black;
+  width: 314px;
+  height: 314px;
+  background-color: var(--background);
+  z-index: 2;
 }
 
 .button, .score {
-  background-color: grey;
+  background-color: var(--snake);
+  color: var(--background);
   padding: 15px 30px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .button:hover {
@@ -62,16 +91,15 @@ body {
 }
 
 .mobile-controls {
-  visibility:hidden;
+  /* visibility:hidden; */
   display: none;
-
   margin-top: 560px;
   position: absolute;
 }
 
 .mobile-controls div {
   background-color: red;
-  border: 1px solid black;
+  border: 1px solid var(--snake);
   border-radius: 100%;
   height: 60px;
   width: 60px;
@@ -102,7 +130,7 @@ body {
 }
 
 
-@media (max-width: 414px) and (min-width: 367px) {
+/* @media (max-width: 414px) and (min-width: 367px) {
   @viewport {
     width: device-width;
   }
@@ -114,4 +142,4 @@ body {
     display: flex;
     justify-content: center;
   }
-}
+} */
