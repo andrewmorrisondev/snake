@@ -1,12 +1,15 @@
 # [play snake](https://ssssnake.netlify.app)
 
-![start screen](https://i.imgur.com/4DYTRVW.png)
-![game over](https://i.imgur.com/vXAY1bN.png)
+![start screen]()
+![game over]()
 
 <!-- #### a description of snake, why I chose it, and a screenshot -->
 Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake becuase I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
 <!-- # How to Play -->
-This is an MVP. Bugs and ugliness to be patched in later updates.
+# Controls
+
+### Spacebar - begin a new game.
+### WASD - change the snakes direction.
 
 # Attributions
 
@@ -19,6 +22,7 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 * html
 * git
 * netify
+* pixelmator pro
 
 # Upcoming Features - Icebox
 

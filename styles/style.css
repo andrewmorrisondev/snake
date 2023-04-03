@@ -12,6 +12,7 @@ body {
   font-family: 'VT323', monospace;
   background-color: var(--nokia-blue);
   overflow-x: hidden;
+  color: var(--nokia-blue)
 }
 
 .header {
