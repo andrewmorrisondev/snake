@@ -92,9 +92,9 @@ body {
 }
 
 .food {
-  /* background-color: var(--background); */
+  /* background-color: var(--snake); */
   border-radius: 100%;
-  border: 4 px solid var(--snake);
+  border: 4px solid var(--snake)
 }
 
 .start-message, .gg-message {
