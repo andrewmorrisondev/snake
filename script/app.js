@@ -26,17 +26,18 @@ const snake = {
 }
 /*---------------------------- Variables (state) ----------------------------*/
 
-let gameover, 
+let gameover,
+    snakeMoving,
     keyDown = false, 
     tick = null
 
 /*------------------------ Cached Element References ------------------------*/
 
+const score = document.querySelector(`.score`)
 const board = document.querySelector(`.board`)
 const message = document.querySelector(`.start-message`)
 const ggMessage = document.querySelector(`.gg-message`)
 const mobileControls = document.querySelector(`.mobile-controls`)
-const score = document.querySelector(`.score`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -63,6 +64,14 @@ document.addEventListener(`keypress`, (event) => {
       }
     }
   }
+  if (event.key === ` `) {
+    if (gameover) {
+      newGame()
+    } else if (!snakeMoving){
+      displayHide()
+      startSnake()
+    }
+  }
 })
 
 document.addEventListener(`click`, (event) => {
@@ -72,8 +81,6 @@ document.addEventListener(`click`, (event) => {
   }
   if (event.target.textContent === `play again?`) {
     newGame()
-    displayHide()
-    startSnake()
   }
 })
 
@@ -136,6 +143,8 @@ function newGame() {
   resetBoard()
   spawnFood()
   snake.reset()
+  displayHide()
+  startSnake()
 }
 
 function drawForward() {
@@ -156,10 +165,12 @@ function eraseBackward() {
 
 function startSnake() {
   tick = setInterval(renderSnake, snake.speed)
+  snakeMoving = true
 }
 
 function stopSnake() {
   clearInterval(tick)
+  snakeMoving = false
 }
 
 function speedUp() {

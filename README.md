@@ -14,10 +14,10 @@ This is an MVP. Bugs and ugliness to be patched in later updates.
 
 # Technologies
 
-* git
 * javascript
-* html
 * css
+* html
+* git
 * netify
 
 # Upcoming Features - Icebox
