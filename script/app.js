@@ -272,7 +272,8 @@ function renderSnake() {
 
 function spawnFood() {
   const foodPos = Math.floor(Math.random() * grid.size)
-  if (board.childNodes[foodPos].classList.contains(`snake`)) {
+  if (board.childNodes[foodPos].classList.contains(`snake`) || 
+      board.childNodes[foodPos].classList.contains(`snake-head`)) {
     spawnFood()
   } else {
     board.childNodes[foodPos].classList.add(`food`)
