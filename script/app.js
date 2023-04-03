@@ -41,6 +41,13 @@ const mobileControls = document.querySelector(`.mobile-controls`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+document.addEventListener(`keydown`, (event) => {
+  buttonAnimationOn(event.key)
+})
+document.addEventListener(`keyup`, (event) => {
+  buttonAnimationOff(event.key)
+})
+
 document.addEventListener(`keypress`, (event) => {
   if (!keyDown) {
     if (snake.direction === `left` || snake.direction === `right`) {
@@ -107,6 +114,14 @@ document.addEventListener(`click`, (event) => {
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+function buttonAnimationOn(id) {
+  document.querySelector(`#${id}`).classList.remove(`hidden`)
+}
+
+function buttonAnimationOff(id) {
+  document.querySelector(`#${id}`).classList.add(`hidden`)
+}
 
 function displayStart() {
   message.classList.remove(`hidden`)
@@ -206,21 +221,21 @@ function topWallCollide() {
 }
 
 function bottomWallCollide() {
-  if (snake.position[0] > 399) {
+  if (snake.position[0] > grid.size - 1) {
     return true
   }
   return false
 }
 
 function rightWallCollide() {
-  if (snake.position[0] % 20 === 0 && snake.direction === `right`) {
+  if (snake.position[0] % grid.lengthAndWidth === 0 && snake.direction === `right`) {
     return true
   }
   return false
 }
 
 function leftWallCollide() {
-  if (snake.position[0] % 20 === 19 && snake.direction === `left`) {
+  if (snake.position[0] % grid.lengthAndWidth === 19 && snake.direction === `left`) {
     return true
   }
   return false
