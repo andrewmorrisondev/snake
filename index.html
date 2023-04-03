@@ -14,9 +14,16 @@
   <title>snake</title>
 </head>
 <body>
-  <div class="background"><img src="assets/nokia-background.png" alt="a picture of a nokia"></div>
+  <div class="background">
+    <img src="assets/nokia-background.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='w' src="assets/nokia-up-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='s' src="assets/nokia-down-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='a' src="assets/nokia-left-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='d' src="assets/nokia-right-pressed.png" alt="a picture of a nokia">
+  </div>
 
-  <h1 class="header">SNAKE</h1>
+  <div id="background-style"></div>
+  <div class="header"></div>
 
   <div class="border"></div>
   <div class="board"></div>

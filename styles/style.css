@@ -1,6 +1,8 @@
 :root {
   --snake: #5c5102;
   --background: #c0cc00;
+  --nokia-blue: #4c535d;
+  --nokia-grey: #b3b4ac
 }
 
 body {
@@ -8,12 +10,13 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: 'VT323', monospace;
+  background-color: var(--nokia-blue);
 }
 
 .background {
   width: 600px;
   height: 960px;
-  border: 1px solid var(--snake);
+  z-index: 1;
 
   position: absolute;
 }
@@ -21,7 +24,22 @@ body {
 .background img {
   width: 600px;
   height: 960px;
+  /* z-index: 1; */
+}
+
+#background-style {
+  position: absolute;
   z-index: 0;
+  height: 900px;
+  width: 900px;
+  margin-top: -460px;
+  transform: rotate(45deg);
+  background-color: var(--nokia-grey);
+}
+
+.button-animation {
+  position: absolute;
+  margin-top: -960px;
 }
 
 .border {
@@ -30,6 +48,7 @@ body {
   height: 318px;
   margin-top: 25px;
   border: 3px dotted var(--snake);
+  z-index: 2;
 }
 
 .board {
@@ -39,7 +58,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -18px;
+  margin-top: 30px;
   z-index: 1;
   /* border: 1px solid red; */
 }
@@ -66,11 +85,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 27px;
+  margin-top: 28px;
   position: absolute;
 
-  width: 314px;
-  height: 314px;
+  width: 312px;
+  height: 312px;
   background-color: var(--background);
   z-index: 2;
 }
