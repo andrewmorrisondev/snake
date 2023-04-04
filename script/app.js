@@ -5,6 +5,8 @@ const grid = {
   size: 20 * 20
 }
 
+const highScore = 62
+
 const snake = {
   position: [86, 66, 46, 26],
   direction: `down`,

@@ -59,6 +59,23 @@ body {
   margin-top: -960px;
 }
 
+.high-score {
+  color: var(--snake);
+  z-index: 1;
+  margin-left: -400px;
+  margin-top: -300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.high-score h2 {
+  background-color: var(--snake);
+  color: var(--background);
+  width: 40px;
+  text-align: center;
+  border-radius: 100%;
+}
+
 .border {
   position: absolute;
   width: 318px;
@@ -120,12 +137,13 @@ body {
 }
 
 .do-not-press {
-  margin-top: 75px;
+  margin-top: 292px;
   z-index: 1;
   height: 60px;
   width: 200px;
   text-align: center;
   line-height: 60px;
+  /* border: 1px solid red; */
 }
 
 .do-not-press h3 {
