@@ -38,6 +38,7 @@ const board = document.querySelector(`.board`)
 const message = document.querySelector(`.start-message`)
 const ggMessage = document.querySelector(`.gg-message`)
 const mobileControls = document.querySelector(`.mobile-controls`)
+const doNot = document.querySelector(`.do-not-press`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -46,6 +47,18 @@ document.addEventListener(`keydown`, (event) => {
 })
 document.addEventListener(`keyup`, (event) => {
   buttonAnimationOff(event.key)
+})
+
+doNot.addEventListener(`mouseover`, () => {
+  document.querySelector(`#do-not-press`).classList.remove(`hidden`)
+})
+
+doNot.addEventListener(`mouseout`, () => {
+  document.querySelector(`#do-not-press`).classList.add(`hidden`)
+})
+
+doNot.addEventListener(`click`, () => {
+  youPressed()
 })
 
 document.addEventListener(`keypress`, (event) => {
@@ -114,6 +127,10 @@ document.addEventListener(`click`, (event) => {
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+function youPressed() {
+  alert(`you can't get mad at me for using this alert becuase I was pretty clear about not pressing that button`)
+}
 
 function buttonAnimationOn(id) {
   document.querySelector(`#${id}`).classList.remove(`hidden`)

@@ -122,6 +122,11 @@ body {
   background-color: lightgray;
 }
 
+.do-not-press {
+  margin-top: 95px;
+  z-index: 1;
+}
+
 .hidden {
   display: none;
 }
