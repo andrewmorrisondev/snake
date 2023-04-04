@@ -86,16 +86,18 @@ body {
 
 .snake {
   background-color: var(--snake);
+  box-shadow: 1px 1px black;
 }
 
 .snake-head {
   background-color: var(--snake);
+  box-shadow: 1px 1px black;
 }
 
 .food {
   /* background-color: var(--snake); */
   border-radius: 100%;
-  border: 4px solid var(--snake)
+  border: 4px solid var(--snake);
 }
 
 .start-message, .gg-message {
