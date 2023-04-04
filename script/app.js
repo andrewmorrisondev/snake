@@ -195,11 +195,8 @@ function speedUp() {
 
 function foodCollide() {
   if (board.childNodes[snake.position[0]].classList.contains(`food`)) {
-    // remove food
     board.childNodes[snake.position[0]].classList.remove(`food`)
-    // increase lenghth
     snake.eat()
-    // spawn new food
     spawnFood()
     speedUp()
     console.log(snake.speed);

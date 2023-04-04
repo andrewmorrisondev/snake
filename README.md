@@ -47,11 +47,74 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 
 ~~[ ] - leaderboard~~ 
 
+[ ] - sound effects
+
+[ ] - fix window size
+
 [ ] - easter eggs
 
 [ ] - cheat codes
 
-<!-- # Highlights from app.js -->
+# Highlights from app.js
+
+### The Snake Object
+``` 
+const snake = {
+  position: [86, 66, 46, 26],
+  direction: `down`,
+  length: 3,
+  speed: 100,
+  score: 0,
+  eat: () => {
+    ++snake.length,
+    ++snake.score,
+    snake.speed -= 0.2
+  },
+  reset: () => {
+    snake.position = [86, 66, 46, 26],
+    snake.direction = `down`,
+    snake.length = 3,
+    snake.speed = 100,
+    snake.score = 0
+  }
+}
+```
+### Snake Tail
+```
+function drawForward() {
+  snake.position.forEach((pos) => {
+    board.childNodes[pos].classList.add(`snake`)
+  })
+  board.childNodes[snake.position[0]].classList.remove(`snake`)
+  board.childNodes[snake.position[0]].classList.add(`snake-head`)
+}
+
+function eraseBackward() {
+  if (snake.position.length > snake.length) {
+    const trail = snake.position.pop()
+    board.childNodes[trail].classList.remove(`snake`)
+  }
+  board.childNodes[snake.position[1]].classList.remove(`snake-head`)
+}
+```
+
+### Button Animations
+```
+document.addEventListener(`keydown`, (event) => {
+  buttonAnimationOn(event.key)
+})
+document.addEventListener(`keyup`, (event) => {
+  buttonAnimationOff(event.key)
+})
+
+function buttonAnimationOn(id) {
+  document.querySelector(`#${id}`).classList.remove(`hidden`)
+}
+
+function buttonAnimationOff(id) {
+  document.querySelector(`#${id}`).classList.add(`hidden`)
+}
+```
 
 # Wireframe
 
