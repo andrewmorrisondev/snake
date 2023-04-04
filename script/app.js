@@ -152,6 +152,14 @@ function updateScore() {
   currentScore.innerText = parseInt(snake.score)
 }
 
+function playCollide() {
+  if (audio) {
+    const collideByte = new Audio(`/assets/sounds/collide.wav`)
+    collideByte.volume = 0.4
+    collideByte.play()
+  } 
+}
+
 function playConsume() {
   if (audio) {
     const consumeByte = new Audio(`/assets/sounds/consume.wav`)
@@ -261,6 +269,7 @@ function foodCollide() {
 
 function tailCollide() {
   if (board.childNodes[snake.position[0]].classList.contains(`snake`)) {
+    playCollide()
     return true
   }
   return false
@@ -296,6 +305,7 @@ function leftWallCollide() {
 
 function wallCollide() {
   if (topWallCollide() || bottomWallCollide() || leftWallCollide() || rightWallCollide()) {
+    playCollide()
     return true
   }
   return false
