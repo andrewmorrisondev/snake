@@ -17,7 +17,8 @@ const snake = {
     ++snake.length,
     ++snake.score,
     snake.speed -= 0.2,
-    playConsume()
+    playConsume(),
+    updateScore()
   },
   reset: () => {
     snake.position = [86, 66, 46, 26],
@@ -39,6 +40,7 @@ let gameover,
 /*------------------------ Cached Element References ------------------------*/
 
 const score = document.querySelector(`.score`)
+const currentScore = document.querySelector(`#current-score-display`)
 const board = document.querySelector(`.board`)
 const message = document.querySelector(`.start-message`)
 const ggMessage = document.querySelector(`.gg-message`)
@@ -146,6 +148,10 @@ document.addEventListener(`click`, (event) => {
 
 /*-------------------------------- Functions --------------------------------*/
 
+function updateScore() {
+  currentScore.innerText = parseInt(snake.score)
+}
+
 function playConsume() {
   if (audio) {
     const consumeByte = new Audio(`/assets/sounds/consume.wav`)
@@ -208,6 +214,7 @@ function newGame() {
   spawnFood()
   snake.reset()
   displayHide()
+  updateScore()
   startSnake()
 }
 

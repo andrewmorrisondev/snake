@@ -68,7 +68,18 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.high-score h2 {
+
+.current-score {
+  color: var(--snake);
+  z-index: 4;
+  margin-right: -400px;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.high-score h2, .current-score h2 {
   background-color: var(--snake);
   color: var(--background);
   width: 40px;
@@ -137,7 +148,7 @@ body {
 }
 
 .do-not-press {
-  margin-top: 292px;
+  margin-top: 314px;
   z-index: 1;
   height: 60px;
   width: 200px;
