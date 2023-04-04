@@ -14,7 +14,8 @@ const snake = {
   eat: () => {
     ++snake.length,
     ++snake.score,
-    snake.speed -= 0.2
+    snake.speed -= 0.2,
+    playConsume()
   },
   reset: () => {
     snake.position = [86, 66, 46, 26],
@@ -24,12 +25,14 @@ const snake = {
     snake.score = 0
   }
 }
+
 /*---------------------------- Variables (state) ----------------------------*/
 
 let gameover,
     snakeMoving,
     keyDown = false, 
-    tick = null
+    tick = null,
+    audio = false
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -39,6 +42,7 @@ const message = document.querySelector(`.start-message`)
 const ggMessage = document.querySelector(`.gg-message`)
 const mobileControls = document.querySelector(`.mobile-controls`)
 const doNot = document.querySelector(`.do-not-press`)
+const hello = document.querySelector(`.hello`)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -59,6 +63,19 @@ doNot.addEventListener(`mouseout`, () => {
 
 doNot.addEventListener(`click`, () => {
   youPressed()
+})
+
+hello.addEventListener(`mouseover`, () => {
+  document.querySelector(`#hello`).classList.remove(`hidden`)
+})
+
+hello.addEventListener(`mouseout`, () => {
+  document.querySelector(`#hello`).classList.add(`hidden`)
+})
+
+hello.addEventListener(`click`, () => {
+  playHello()
+  audio = !audio
 })
 
 document.addEventListener(`keypress`, (event) => {
@@ -125,8 +142,21 @@ document.addEventListener(`click`, (event) => {
 })
 
 
-
 /*-------------------------------- Functions --------------------------------*/
+
+function playConsume() {
+  if (audio) {
+    const consumeByte = new Audio(`/assets/sounds/consume.wav`)
+    consumeByte.volume = 0.4
+    consumeByte.play()
+  }
+}
+
+function playHello() {
+  const helloByte = new Audio(`/assets/sounds/hello.mp3`)
+  helloByte.volume = 0.2
+  helloByte.play()
+}
 
 function youPressed() {
   alert(`you can't get mad at me for using this alert becuase I was pretty clear about not pressing that button`)

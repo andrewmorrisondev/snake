@@ -123,8 +123,21 @@ body {
 }
 
 .do-not-press {
-  margin-top: 95px;
+  margin-top: 75px;
   z-index: 1;
+  height: 60px;
+  width: 200px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.hello {
+  margin-left: -350px;
+  margin-top: 5px;
+  z-index: 1;
+  transform: rotate(40deg);
+  width: 100px;
+  height: 50px;
 }
 
 .hidden {
