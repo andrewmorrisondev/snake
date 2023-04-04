@@ -95,7 +95,6 @@ body {
 }
 
 .food {
-  /* background-color: var(--snake); */
   border-radius: 100%;
   border: 4px solid var(--snake);
 }
@@ -120,10 +119,6 @@ body {
   z-index: 2;
 }
 
-.button:hover {
-  background-color: lightgray;
-}
-
 .do-not-press {
   margin-top: 75px;
   z-index: 1;
@@ -133,6 +128,10 @@ body {
   line-height: 60px;
 }
 
+.do-not-press h3 {
+  cursor: pointer;
+}
+
 .hello {
   margin-left: -350px;
   margin-top: 5px;
@@ -140,6 +139,7 @@ body {
   transform: rotate(40deg);
   width: 100px;
   height: 50px;
+  cursor: pointer;
 }
 
 .hidden {
