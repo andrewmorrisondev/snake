@@ -5,7 +5,7 @@ const grid = {
   size: 20 * 20
 }
 
-const highScore = 62
+const highScore = 67
 
 const snake = {
   position: [86, 66, 46, 26],
@@ -41,6 +41,7 @@ let gameover,
 
 const score = document.querySelector(`.score`)
 const currentScore = document.querySelector(`#current-score-display`)
+const highScoreEL = document.querySelector(`#high-score-display`)
 const board = document.querySelector(`.board`)
 const message = document.querySelector(`.start-message`)
 const ggMessage = document.querySelector(`.gg-message`)
@@ -150,6 +151,10 @@ document.addEventListener(`click`, (event) => {
 
 function updateScore() {
   currentScore.innerText = parseInt(snake.score)
+}
+
+function renderHighScore() {
+  highScoreEL.innerText = highScore
 }
 
 function playCollide() {
@@ -363,6 +368,7 @@ function init() {
   snake.reset()
   renderBoard()
   renderSnake()
+  renderHighScore()
   spawnFood()
   displayStart()
 }
