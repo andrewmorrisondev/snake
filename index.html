@@ -13,26 +13,42 @@
   <link rel="stylesheet" href="styles/style.css">
   <title>snake</title>
 </head>
-<body>
-  <div class="background">
+
+<body class="preload">
+  
+  <!-- ON SCREEN -->
+  <section class="screen">
+    <div class='high-score'>
+      <p>high score:</p>
+      <h2 id="high-score-display"></h2>
+      <p>ivan</p>
+    </div>
+    
+    <div class="board"></div>
+    
+    <div class='current-score'>
+      <p>score:</p>
+      <h2 id="current-score-display">0</h2>
+      <p></p>
+    </div>
+  </section>
+
+    <!-- LINKS -->
+    <div class="links no-transition">
+      <a href="https://github.com/andrewmorrisondev/snake"><img id='github' src="assets/imgs/github-icon.png" alt="github icon"></a>
+      <a href="https://www.linkedin.com/in/andy-morrison-b94945246/"><img id='linkedin' src="assets/imgs/linkedin-icon.png" alt="github icon"></a>
+      <a href="https://www.andrewmorrison.dev"><p>code by andy</p></a>
+    </div>
+    <!-- LOGO -->
+    <div class="logo">logo</div>
+
+  <div class="phone preload">
     <img src="assets/imgs/nokia-background.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='w' src="assets/imgs/buttons/nokia-up-pressed.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='s' src="assets/imgs/buttons/nokia-down-pressed.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='a' src="assets/imgs/buttons/nokia-left-pressed.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='d' src="assets/imgs/buttons/nokia-right-pressed.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='do-not-press' src="assets/imgs/buttons/do-not-pressed.png" alt="a picture of a nokia">
-    <img class='button-animation hidden' id='hello' src="assets/imgs/buttons/hello.png" alt="a picture of a nokia">
   </div>
-
-  <div id="background-style"></div>
-  <div class="header">
-    <a href="https://github.com/andrewmorrisondev/snake"><img id='github' src="assets/imgs/github-icon.png" alt="github icon"></a>
-    <a href="https://www.linkedin.com/in/andy-morrison-b94945246/"><img id='linkedin' src="assets/imgs/linkedin-icon.png" alt="github icon"></a>
-    <p>code by andy</p>
-  </div>
-
-  <div class="border"></div>
-  <div class="board"></div>
+    
+  
+  <!-- MESSAGES -->
+  
   <div class="start-message">
     <div class="button">play</div>
   </div>
@@ -40,31 +56,37 @@
     <div class="button">play again?</div>
     <div class="score"></div>
   </div>
-  <div class='high-score'>
-    <p>high score:</p>
-    <h2 id="high-score-display">62</h2>
-    <p>ivan</p>
-  </div>
-  <div class='current-score'>
-    <p>score:</p>
-    <h2 id="current-score-display">0</h2>
-    <p></p>
-  </div>
+  
+  <!-- ABSOLUTES -->
 
+  <div class="button-animation-container">
+    <!-- ANIMATIONS -->
+    <img class='button-animation hidden' id='w' src="assets/imgs/buttons/nokia-up-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='s' src="assets/imgs/buttons/nokia-down-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='a' src="assets/imgs/buttons/nokia-left-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='d' src="assets/imgs/buttons/nokia-right-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='do-not-press' src="assets/imgs/buttons/do-not-pressed.png" alt="a picture of a nokia">
+    <img class='button-animation hidden' id='hello' src="assets/imgs/buttons/hello.png" alt="a picture of a nokia">
+  </div>
+  
+  <div id="background-style01"></div>
+  <div id="background-style02"></div>
+  <div class="border"></div>
+  
   <div class='do-not-press'>
-    <h3>do not press</h3>
   </div>
-
+  
   <div class="hello">
     <h3></h3>
   </div>
 
+  <!-- MOBILE CONTROLS -->
   <div class="mobile-controls">
-    <div id="l">L</div>
-    <div id="u">U</div>
-    <div id="d">D</div>
-    <div id="r">R</div>
+    <div id="L"><p>^</p></div>
+    <div id="U"><p>^</p></div>
+    <div id="R"><p>^</p></div>
+    <div id="D"><p>^</p></div>
   </div>
- 
+  
 </body>
 </html>

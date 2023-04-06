@@ -28,6 +28,16 @@ p, h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+a {
+  text-decoration: none;
+  color: var(--nokia-blue);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--nokia-blue);
+}
+
 Source:www.joshwcomeau.com
 8
 css resetCSS By Hannah Laraoux on Aug 11 2022 ThankCommentShare

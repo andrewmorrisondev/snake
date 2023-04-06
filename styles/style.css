@@ -5,6 +5,14 @@
   --nokia-grey: #b3b4ac;
 }
 
+/* taken from https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load */
+.preload * {
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+/* end citation */
+
 body {
   display: flex;
   flex-direction: column;
@@ -12,17 +20,29 @@ body {
   font-family: 'VT323', monospace;
   background-color: var(--nokia-blue);
   overflow-x: hidden;
-  color: var(--nokia-blue)
+  color: var(--nokia-blue);
+  overflow-y: hidden;
 }
 
-.header {
+/* body * {
+  border: 1px solid red;
+} */
+
+.links {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80px;
-  width: 80px;
-  position: absolute;
-  margin-left: -700px;
+  width: 82px;
+  z-index: 2;
+
+  margin-left: -670px;
+}
+
+.links a {
+  padding-top: 10px;
+  white-space: nowrap;
 }
 
 #linkedin {
@@ -30,53 +50,35 @@ body {
   height: 60px;
 }
 
-.background {
+.phone {
+  position: absolute;
   width: 600px;
+  min-width: 600px;
   height: 960px;
   z-index: 1;
-  position: absolute;
 }
 
-.background img {
+.phone img {
   width: 600px;
+  min-width: 600;
   height: 960px;
   /* z-index: 1; */
 }
 
-#background-style {
+.screen {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  z-index: 0;
-  height: 900px;
-  width: 900px;
-  margin-top: -460px;
-  transform: rotate(45deg);
-  background-color: var(--nokia-grey);
-
+  z-index: 2;
 }
 
-.button-animation {
-  position: absolute;
-  margin-top: -960px;
-}
-
-.high-score {
+.high-score, .current-score {
   color: var(--snake);
   z-index: 1;
-  margin-left: -400px;
-  margin-top: -300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.current-score {
-  color: var(--snake);
-  z-index: 4;
-  margin-right: -400px;
-  margin-top: -80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 40px;
 }
 
 .high-score h2, .current-score h2 {
@@ -85,6 +87,33 @@ body {
   width: 40px;
   text-align: center;
   border-radius: 100%;
+}
+
+.high-score p, .current-score p {
+  width: 100px;
+  text-align: center;
+}
+
+#background-style01 {
+  position: absolute;
+  z-index: 0;
+  height: 900px;
+  width: 900px;
+  margin-top: -460px;
+  transform: rotate(45deg);
+  background-color: var(--nokia-grey);
+}
+#background-style02 {
+  position: absolute;
+  background-color: var(--background);
+  width: 500px;
+  height: 360px;
+  border-radius: 20%;
+  z-index: 0
+}
+
+.button-animation {
+  position: absolute;
 }
 
 .border {
@@ -148,13 +177,13 @@ body {
 }
 
 .do-not-press {
-  margin-top: 314px;
+  position: absolute;
+  margin-top: 414px;
   z-index: 1;
   height: 60px;
   width: 200px;
   text-align: center;
   line-height: 60px;
-  /* border: 1px solid red; */
 }
 
 .do-not-press h3 {
@@ -162,69 +191,184 @@ body {
 }
 
 .hello {
+  position: absolute;
   margin-left: -350px;
-  margin-top: 5px;
+  margin-top: 500px;
   z-index: 1;
   transform: rotate(40deg);
   width: 100px;
   height: 50px;
   cursor: pointer;
 }
+.mobile-controls {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  transform: rotate(45deg);
+  /* background-color: var(--background); */
+  margin-top: 1320px;
+  border: none;
+  border-radius: 20%;
+
+  z-index: 2;
+}
+.mobile-controls div {
+  width: 130px;
+  height: 130px;
+  background-color: var(--nokia-blue);
+  border-radius: 20%;
+  margin: 10px;
+  font-size: 100px;
+  color: var(--nokia-grey);
+  display: flex;
+  justify-content: center;
+}
+
+#L p {
+  transform: rotate(-45deg);
+}
+#U p {
+  transform: rotate(45deg);
+}
+#D p {
+  transform: rotate(-225deg);
+}
+#R p {
+  transform: rotate(225deg);
+}
 
 .hidden {
   display: none;
 }
 
-.mobile-controls {
-  /* visibility:hidden; */
-  display: none;
-  margin-top: 560px;
-  position: absolute;
+@media only screen and (max-width: 750px) {
+  .links {
+    animation: link-scoot-out 1s;
+    animation-fill-mode: forwards;
+  }
 }
-
-.mobile-controls div {
-  background-color: red;
-  border: 1px solid var(--snake);
-  border-radius: 100%;
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  text-align: center;
-}
-
-.mobile-controls #u {
-  margin-top: -50px;
-  margin-bottom: 50px;
-  position: absolute;
-}
-
-.mobile-controls #d {
-  margin-top: 50px;
-  margin-bottom: -50px;
-  position: absolute;
-}
-
-.mobile-controls #l {
-  margin-left: -100px;
-  position: absolute;
-}
-
-.mobile-controls #r {
-  margin-left: 100px;
-  position: absolute;
-}
-
-
-/* @media (max-width: 414px) and (min-width: 367px) {
-  @viewport {
-    width: device-width;
+@media only screen and (min-width: 749px) {
+  .links {
+    animation: link-scoot-in 1s;
+    animation-fill-mode: forwards;
   }
 }
 
-@media screen and (max-width: 414px) {
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: var(--background);
+  }
+  .do-not-press, #background-style, .hello {
+    display: none;
+  }
+  .phone {
+    animation: phone-scoot-out 1s;
+    animation-fill-mode: forwards;
+  }
   .mobile-controls {
-    visibility: visible;
-    display: flex;
-    justify-content: center;
+    animation: controls-scoot-in 1.2s;
+    animation-fill-mode: forwards;
   }
-} */
+  #background-style01 {
+    animation: background01-scoot-out 0.2s;
+    animation-fill-mode: forwards;
+  }
+  .high-score, .current-score {
+    animation: scoreboard-shift-down 1.4s;
+    animation-fill-mode: forwards;
+  }
+} 
+@media only screen and (min-width: 599px) {
+  .phone {
+    animation: phone-scoot-in 1s;
+    animation-fill-mode: forwards;
+  }
+  .mobile-controls {
+    animation: controls-scoot-out 1.2s;
+    animation-fill-mode: forwards;
+  }
+  #background-style01 {
+    animation: background01-scoot-in 1s;
+    animation-fill-mode: forwards;
+  }
+  #background-style02 {
+    animation: background02-fade-in 1s;
+    animation-fill-mode: forwards;
+  }
+  .high-score, .current-score, .screen {
+    animation: scoreboard-shift-up 1.4s;
+    animation-fill-mode: forwards;
+  }
+  body {
+    animation: body-color-change 1s;
+    animation-fill-mode: forwards;
+  }
+} 
+
+/* KEYFRAMES */
+
+@keyframes link-scoot-out {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-200px); }
+}
+@keyframes link-scoot-in {
+  from { transform: translateY(-200px); }
+  to { transform: translateY(0px); }
+}
+
+@keyframes phone-scoot-out {
+  from { transform: scale(1) translateY(0px); }
+  to { transform: scale(5) translateY(280px); }
+}
+@keyframes phone-scoot-in {
+  from { transform: scale(5) translateY(280px); }
+  to { transform: scale(1) translateY(0px); }
+}
+
+@keyframes controls-scoot-in {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1000px) rotate(315deg);
+  }
+}
+@keyframes controls-scoot-out {
+  from {
+    transform: translateY(-1000px) rotate(315deg);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes background01-scoot-out {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-600px); }
+}
+@keyframes background01-scoot-in {
+  from { transform: translateY(-600px); }
+  to { transform: translateY(0px) rotate(45deg); }
+}
+
+@keyframes background02-fade-in {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes body-color-change {
+  0%     {background-color: var(--background);}
+  25% {background-color: var(--nokia-grey);}
+  100.0%  {background-color: var(--nokia-blue);}
+}
+
+@keyframes scoreboard-shift-down {
+  from { transform: translateY(0px); }
+  to { transform: translateY(100px); }
+}
+
+@keyframes scoreboard-shift-up {
+  from { transform: translateY(100px); }
+  to { transform: translateY(0px); }
+}

@@ -149,6 +149,11 @@ document.addEventListener(`click`, (event) => {
 
 /*-------------------------------- Functions --------------------------------*/
 
+// stops animations on load
+setTimeout( () => {
+  document.body.classList.remove('preload');
+},1000)
+
 function updateScore() {
   currentScore.innerText = parseInt(snake.score)
 }
@@ -268,7 +273,6 @@ function foodCollide() {
     snake.eat()
     spawnFood()
     speedUp()
-    console.log(snake.speed);
   }
 }
 
