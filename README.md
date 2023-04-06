@@ -1,7 +1,7 @@
 # [play snake](https://ssssnake.netlify.app)
 
 <!-- #### a description of snake, why I chose it, and a screenshot -->
-Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake becuase I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
+Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake because I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
 
 ![start screen](https://i.imgur.com/nlFpopN.png)
 <!-- # How to Play -->
@@ -37,11 +37,11 @@ Ivan Jukic - 67
 
 [X] - consuming food makes the snake longer
 
-[X] - speed increase as snake grows
+[X] - speed increases as the snake grows
 
-[X] - collison detection
+[X] - collision detection
 
-[X] - accessibilty for mobile users
+[X] - accessibility for mobile users
 
 [X] - scoreboard
 
