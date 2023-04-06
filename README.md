@@ -47,13 +47,17 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 
 ~~[ ] - leaderboard~~ 
 
-[ ] - sound effects
+[X] - sound effects
 
-[ ] - fix window size
+[X] - fix window size
 
-[ ] - easter eggs
+[X] - easter eggs
 
-[ ] - cheat codes
+~~[ ] - cheat codes~~
+
+[ ] - reconnect mobile buttons
+
+[ ] - fix animations
 
 # Highlights from app.js
 
