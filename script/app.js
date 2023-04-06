@@ -117,11 +117,12 @@ document.addEventListener(`keypress`, (event) => {
 })
 
 document.addEventListener(`click`, (event) => {
-  if (event.target.textContent === `play`) {
+  console.dir(event.target.classList[0] === `border`)
+  if (event.target.id === `play`) {
     displayHide()
     startSnake()
   }
-  if (event.target.textContent === `play again?`) {
+  if (event.target.id === `play-again`) {
     newGame()
   }
 })
@@ -129,18 +130,18 @@ document.addEventListener(`click`, (event) => {
 // buttons for mobile
 document.addEventListener(`click`, (event) => {
   if (snake.direction === `left` || snake.direction === `right`) {
-    if (event.target.id === `u`) {
+    if (event.target.parentElement.id === `U`) {
       snake.direction = `up`
     }
-    if (event.target.id === `d`) {
+    if (event.target.parentElement.id === `D`) {
       snake.direction = `down`
     }
   }
   if (snake.direction === `up` || snake.direction === `down`) {
-    if (event.target.id === `l`) {
+    if (event.target.parentElement.id === `L`) {
       snake.direction = `left`
     }
-    if (event.target.id === `r`) {
+    if (event.target.parentElement.id === `R`) {
       snake.direction = `right`
     }
   }
@@ -152,7 +153,7 @@ document.addEventListener(`click`, (event) => {
 // stops animations on load
 setTimeout( () => {
   document.body.classList.remove('preload');
-},1000)
+},2000)
 
 function updateScore() {
   currentScore.innerText = parseInt(snake.score)
@@ -189,11 +190,15 @@ function youPressed() {
 }
 
 function buttonAnimationOn(id) {
-  document.querySelector(`#${id}`).classList.remove(`hidden`)
+  if (!id === ` `) {
+    document.querySelector(`#${id}`).classList.remove(`hidden`)
+  }
 }
 
 function buttonAnimationOff(id) {
-  document.querySelector(`#${id}`).classList.add(`hidden`)
+  if (!id === ` `) {
+    document.querySelector(`#${id}`).classList.add(`hidden`)
+  }
 }
 
 function displayStart() {

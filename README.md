@@ -55,9 +55,11 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 
 ~~[ ] - cheat codes~~
 
-[ ] - reconnect mobile buttons
+[X] - reconnect mobile buttons
 
-[ ] - fix animations
+[ ] - fix new animation glitch
+
+[X] - fix button animations
 
 # Highlights from app.js
 
@@ -128,3 +130,5 @@ function buttonAnimationOff(id) {
 # Attributions
 
 * [Josh's Custom CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
+
+* [Prevent Animations on Page Load](https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load)
