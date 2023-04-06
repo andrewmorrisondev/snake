@@ -58,13 +58,13 @@ document.addEventListener(`keyup`, (event) => {
   buttonAnimationOff(event.key)
 })
 
-doNot.addEventListener(`mouseover`, () => {
-  document.querySelector(`#do-not-press`).classList.remove(`hidden`)
-})
+// doNot.addEventListener(`mouseover`, () => {
+//   document.querySelector(`#do-not-press`).classList.remove(`hidden`)
+// })
 
-doNot.addEventListener(`mouseout`, () => {
-  document.querySelector(`#do-not-press`).classList.add(`hidden`)
-})
+// doNot.addEventListener(`mouseout`, () => {
+//   document.querySelector(`#do-not-press`).classList.add(`hidden`)
+// })
 
 doNot.addEventListener(`click`, () => {
   youPressed()

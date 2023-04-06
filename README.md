@@ -104,23 +104,16 @@ function eraseBackward() {
 }
 ```
 
-<!-- ### Button Animations
+### Render Board
 ```
-document.addEventListener(`keydown`, (event) => {
-  buttonAnimationOn(event.key)
-})
-document.addEventListener(`keyup`, (event) => {
-  buttonAnimationOff(event.key)
-})
-
-function buttonAnimationOn(id) {
-  document.querySelector(`#${id}`).classList.remove(`hidden`)
+function renderBoard() {
+  for (i = 0; i < grid.size; i++) {
+    const box = document.createElement(`div`)
+    box.setAttribute(`class`, `box`)
+    board.appendChild(box)
+  }
 }
-
-function buttonAnimationOff(id) {
-  document.querySelector(`#${id}`).classList.add(`hidden`)
-}
-``` -->
+```
 
 # Wireframe
 
