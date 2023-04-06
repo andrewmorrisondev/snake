@@ -71,8 +71,6 @@ body {
   margin-left: 10px;
 }
 
-
-
 .phone {
   position: absolute;
   width: 600px;
@@ -85,7 +83,6 @@ body {
   width: 600px;
   min-width: 600;
   height: 960px;
-  /* z-index: 1; */
 }
 
 .screen {
@@ -244,7 +241,7 @@ body {
   border: none;
   border-radius: 20%;
 
-  z-index: 0;
+  z-index: 1;
 }
 .mobile-controls div {
   width: 130px;

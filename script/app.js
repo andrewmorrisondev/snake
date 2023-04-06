@@ -49,6 +49,11 @@ const mobileControls = document.querySelector(`.mobile-controls`)
 const doNot = document.querySelector(`.do-not-press`)
 const hello = document.querySelector(`.hello`)
 
+const controlsL = document.querySelector(`#L`)
+const controlsR = document.querySelector(`#R`)
+const controlsU = document.querySelector(`#U`)
+const controlsD = document.querySelector(`#D`)
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 document.addEventListener(`keydown`, (event) => {
@@ -144,6 +149,27 @@ document.addEventListener(`click`, (event) => {
     if (event.target.parentElement.id === `R`) {
       snake.direction = `right`
     }
+  }
+})
+
+controlsL.addEventListener(`click`, () => {
+  if (snake.direction === `up` || snake.direction === `down`) {
+    snake.direction = `left`
+  }
+})
+controlsR.addEventListener(`click`, () => {
+  if (snake.direction === `up` || snake.direction === `down`) {
+    snake.direction = `right`
+  }
+})
+controlsU.addEventListener(`click`, () => {
+  if (snake.direction === `left` || snake.direction === `right`) {
+    snake.direction = `up`
+  }
+})
+controlsD.addEventListener(`click`, () => {
+  if (snake.direction === `left` || snake.direction === `right`) {
+    snake.direction = `down`
   }
 })
 
