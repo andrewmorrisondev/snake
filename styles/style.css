@@ -45,10 +45,33 @@ body {
   white-space: nowrap;
 }
 
-#linkedin {
+#linkedin, #linkedin-mobile {
   width: 60px;
   height: 60px;
 }
+.mobile-links {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  margin-top: 740px;
+  margin-left: -10px;
+}
+.mobile-links a {
+  padding: 10px;
+}
+
+#github-mobile {
+  /* margin-left: -100px; */
+  width: 80px;
+  height: 80px;
+}
+
+#linkedin-mobile {
+  margin-left: 10px;
+}
+
+
 
 .phone {
   position: absolute;
@@ -203,7 +226,7 @@ body {
 .hello {
   position: absolute;
   margin-left: -350px;
-  margin-top: 500px;
+  margin-top: 480px;
   z-index: 1;
   transform: rotate(40deg);
   width: 100px;
@@ -221,7 +244,7 @@ body {
   border: none;
   border-radius: 20%;
 
-  z-index: 2;
+  z-index: 0;
 }
 .mobile-controls div {
   width: 130px;
@@ -293,6 +316,10 @@ body {
     animation: scoreboard-shift-down 1.4s;
     animation-fill-mode: forwards;
   }
+  .mobile-links {
+    animation: mobile-link-scoot-in 1.0s;
+    animation-fill-mode: forwards;
+  }
 } 
 @media only screen and (min-width: 599px) {
   .phone {
@@ -315,6 +342,10 @@ body {
     animation: scoreboard-shift-up 1.4s;
     animation-fill-mode: forwards;
   }
+  .mobile-links {
+    animation: mobile-link-scoot-out 1.0s;
+    animation-fill-mode: forwards;
+  }
   body {
     animation: body-color-change 1s;
     animation-fill-mode: forwards;
@@ -331,6 +362,14 @@ body {
   from { transform: translateY(-200px); }
   to { transform: translateY(0px); }
 }
+@keyframes mobile-link-scoot-out {
+  from { transform: translateY(0px); }
+  to { transform: translateY(600px); }
+}
+@keyframes mobile-link-scoot-in {
+  from { transform: translateY(600px); }
+  to { transform: translateY(0px); }
+}
 
 @keyframes phone-scoot-out {
   from { transform: scale(1) translateY(0px); }
@@ -342,20 +381,12 @@ body {
 }
 
 @keyframes controls-scoot-in {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-1000px) rotate(315deg);
-  }
+  from { transform: translateY(0px); }
+  to { transform: translateY(-1000px) rotate(315deg); }
 }
 @keyframes controls-scoot-out {
-  from {
-    transform: translateY(-1000px) rotate(315deg);
-  }
-  to {
-    transform: translateY(0px);
-  }
+  from { transform: translateY(-1000px) rotate(315deg); }
+  to { transform: translateY(0px); }
 }
 
 @keyframes background01-scoot-out {
@@ -373,9 +404,9 @@ body {
 }
 
 @keyframes body-color-change {
-  0%     {background-color: var(--background);}
-  25% {background-color: var(--nokia-grey);}
-  100.0%  {background-color: var(--nokia-blue);}
+  0%     { background-color: var(--background); }
+  25% { background-color: var(--nokia-grey); }
+  100.0%  { background-color: var(--nokia-blue); }
 }
 
 @keyframes scoreboard-shift-down {

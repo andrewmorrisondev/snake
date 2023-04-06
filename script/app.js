@@ -79,6 +79,7 @@ hello.addEventListener(`mouseout`, () => {
 })
 
 hello.addEventListener(`click`, () => {
+  console.log(`hello`)
   playHello()
   audio = !audio
 })
@@ -117,7 +118,6 @@ document.addEventListener(`keypress`, (event) => {
 })
 
 document.addEventListener(`click`, (event) => {
-  console.dir(event.target.classList[0] === `border`)
   if (event.target.id === `play`) {
     displayHide()
     startSnake()
