@@ -183,6 +183,7 @@ body {
   background-color: var(--snake);
   color: var(--background);
   padding: 15px 30px;
+  cursor: pointer;
 }
 
 .do-not-press {
@@ -232,7 +233,11 @@ body {
   color: var(--nokia-grey);
   display: flex;
   justify-content: center;
-  cursor: ;
+  cursor: pointer;
+}
+
+.mobile-controls div p {
+  cursor: pointer;
 }
 
 #L p {
