@@ -132,3 +132,5 @@ function buttonAnimationOff(id) {
 * [Josh's Custom CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 
 * [Prevent Animations on Page Load](https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load)
+
+* [VT323 - Google Font](https://fonts.google.com/share?selection.family=VT323)
