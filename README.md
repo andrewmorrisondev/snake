@@ -16,15 +16,15 @@ Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia 
 
 
 # High Score
-![high score](https://i.imgur.com/XH7lKV1.png)
+Ivan Jukic - 67
 
 # Technologies
 
-* javascript
+* js
 * css
-* pixelmator pro
 * html
 * git
+* pixelmator pro
 * netify
 
 # Upcoming Features - Icebox
@@ -104,7 +104,7 @@ function eraseBackward() {
 }
 ```
 
-### Button Animations
+<!-- ### Button Animations
 ```
 document.addEventListener(`keydown`, (event) => {
   buttonAnimationOn(event.key)
@@ -120,7 +120,7 @@ function buttonAnimationOn(id) {
 function buttonAnimationOff(id) {
   document.querySelector(`#${id}`).classList.add(`hidden`)
 }
-```
+``` -->
 
 # Wireframe
 
