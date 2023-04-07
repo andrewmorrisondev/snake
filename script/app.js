@@ -67,14 +67,6 @@ doNot.addEventListener(`click`, () => {
   youPressed()
 })
 
-hello.addEventListener(`mouseover`, () => {
-  document.querySelector(`#hello`).classList.remove(`hidden`)
-})
-
-hello.addEventListener(`mouseout`, () => {
-  document.querySelector(`#hello`).classList.add(`hidden`)
-})
-
 hello.addEventListener(`click`, () => {
   console.log(`hello`)
   playHello()
