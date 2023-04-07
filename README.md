@@ -57,8 +57,6 @@ Ivan Jukic - 67
 
 [X] - reconnect mobile buttons
 
-[ ] - fix new animation glitch
-
 [X] - fix button animations
 
 # Highlights from app.js
