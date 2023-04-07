@@ -154,6 +154,12 @@ setTimeout( () => {
   document.body.classList.remove('preload')
 },2000)
 
+function shrekCheck() {
+  if (snake.score > highScore) {
+    window.location.replace("https://www.youtube.com/watch?v=pxw-5qfJ1dk")
+  }
+}
+
 function updateScore() {
   currentScore.innerText = parseInt(snake.score)
 }
@@ -356,6 +362,7 @@ function moveHead() {
 
 function renderSnake() {
   moveHead()
+  shrekCheck()
   if (gameover === false) {
     drawForward()
   }
