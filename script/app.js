@@ -63,14 +63,6 @@ document.addEventListener(`keyup`, (event) => {
   buttonAnimationOff(event.key)
 })
 
-// doNot.addEventListener(`mouseover`, () => {
-//   document.querySelector(`#do-not-press`).classList.remove(`hidden`)
-// })
-
-// doNot.addEventListener(`mouseout`, () => {
-//   document.querySelector(`#do-not-press`).classList.add(`hidden`)
-// })
-
 doNot.addEventListener(`click`, () => {
   youPressed()
 })
@@ -133,25 +125,6 @@ document.addEventListener(`click`, (event) => {
 })
 
 // buttons for mobile
-document.addEventListener(`click`, (event) => {
-  if (snake.direction === `left` || snake.direction === `right`) {
-    if (event.target.parentElement.id === `U`) {
-      snake.direction = `up`
-    }
-    if (event.target.parentElement.id === `D`) {
-      snake.direction = `down`
-    }
-  }
-  if (snake.direction === `up` || snake.direction === `down`) {
-    if (event.target.parentElement.id === `L`) {
-      snake.direction = `left`
-    }
-    if (event.target.parentElement.id === `R`) {
-      snake.direction = `right`
-    }
-  }
-})
-
 controlsL.addEventListener(`click`, () => {
   if (snake.direction === `up` || snake.direction === `down`) {
     snake.direction = `left`
@@ -178,7 +151,7 @@ controlsD.addEventListener(`click`, () => {
 
 // stops animations on load
 setTimeout( () => {
-  document.body.classList.remove('preload');
+  document.body.classList.remove('preload')
 },2000)
 
 function updateScore() {
