@@ -3,7 +3,7 @@
 <!-- #### a description of snake, why I chose it, and a screenshot -->
 Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake because I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
 
-![start screen](https://i.imgur.com/nlFpopN.png)
+![start screen](https://i.imgur.com/0jaVWGL.png)
 <!-- # How to Play -->
 # Controls
 
