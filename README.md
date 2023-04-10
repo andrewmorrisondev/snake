@@ -1,65 +1,61 @@
-# [play snake](https://ssssnake.netlify.app)
+# [Play Snake](https://ssssnake.netlify.app)
 
 <!-- #### a description of snake, why I chose it, and a screenshot -->
-Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build snake because I like playing snake. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
+Snake is a classic arcade game, reprogrammed in 1997 by Taneli Armanto of Nokia for the Nokia 6110. I chose to build Snake because I like playing it. The __theme__ of this project will honor the original, but take liberties where appropriate (or fun).
 
 ![start screen](https://i.imgur.com/0jaVWGL.png)
+
 <!-- # How to Play -->
-# Controls
+## Controls
 
-### Spacebar - begin a new game.
-### WASD - change the snakes direction.
+- Spacebar - begin a new game.
+- WASD - change the snake's direction.
 
-# Gameplay
-
-[gameplay](https://i.imgur.com/BhgiiFc.gifv)
-
-
-# High Score
+## High Score
 Ivan Jukic - 67
 
-# Technologies
+## Technologies
 
-* js
-* css
-* html
-* git
-* pixelmator pro
-* netify
+* JS
+* CSS
+* HTML
+* Git
+* Pixelmator Pro
+* Netlify
 
-# Upcoming Features - Icebox
+## Upcoming Features - Icebox
 
-[X] - a gameboard made up of a grid
+[X] - A gameboard made up of a grid
 
-[X] - a 'snake' that can move around the grid with WASD
+[X] - A snake that can move around the grid with WASD
 
-[X] - randomly spawning food that can be consumed
+[X] - Randomly spawning food that can be consumed
 
-[X] - consuming food makes the snake longer
+[X] - Consuming food makes the snake longer
 
-[X] - speed increases as the snake grows
+[X] - Speed increases as the snake grows
 
-[X] - collision detection
+[X] - Collision detection
 
-[X] - accessibility for mobile users
+[X] - Accessibility for mobile users
 
-[X] - scoreboard
+[X] - Scoreboard
 
-~~[ ] - leaderboard~~ 
+~~[ ] - Leaderboard~~ 
 
-[X] - sound effects
+[X] - Sound effects
 
-[X] - fix window size
+[X] - Fix window size
 
-[X] - easter eggs
+[X] - Easter eggs
 
-~~[ ] - cheat codes~~
+~~[ ] - Cheat codes~~
 
-[X] - reconnect mobile buttons
+[X] - Reconnect mobile buttons
 
-[X] - fix button animations
+[X] - Fix button animations
 
-# Highlights from app.js
+## Highlights from `app.js`
 
 ### The Snake Object
 ``` 
@@ -113,15 +109,13 @@ function renderBoard() {
 }
 ```
 
-# Wireframe
+## Wireframe
 
 ![wireframe01](https://i.imgur.com/4DYTRVW.png)
 ![wireframe02](https://i.imgur.com/vXAY1bN.png)
 
-# Attributions
+## Attributions
 
 * [Josh's Custom CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
-
 * [Prevent Animations on Page Load](https://stackoverflow.com/questions/27938900/how-to-prevent-a-css-keyframe-animation-from-running-on-page-load)
-
 * [VT323 - Google Font](https://fonts.google.com/share?selection.family=VT323)
